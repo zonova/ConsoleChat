@@ -17,8 +17,8 @@ public class Client {
 	public Client() {
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("Введите IP для подключения к серверу.");
-		System.out.println("Формат: xxx.xxx.xxx.xxx");
+		System.out.println("Enter your IP.");
+		System.out.println("Format: xxx.xxx.xxx.xxx");
 
 		String ip = scan.nextLine();
 
@@ -28,7 +28,7 @@ public class Client {
 			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			out = new PrintWriter(socket.getOutputStream(), true);
 
-			System.out.println("Введите свой ник:");
+			System.out.println("Enter your username:");
 			out.println(scan.nextLine());
 
 			// Запускаем вывод всех входящих сообщений в консоль
@@ -56,7 +56,7 @@ public class Client {
 			out.close();
 			socket.close();
 		} catch (Exception e) {
-			System.err.println("Потоки не были закрыты!");
+			System.err.println("Threads close error!");
 		}
 	}
 
@@ -79,7 +79,7 @@ public class Client {
 					System.out.println(str);
 				}
 			} catch (IOException e) {
-				System.err.println("Ошибка при получении сообщения.");
+				System.err.println("Message error.");
 				e.printStackTrace();
 			}
 		}

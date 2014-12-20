@@ -60,7 +60,7 @@ public class Server {
 				}
 			}
 		} catch (Exception e) {
-			System.err.println("Потоки не были закрыты!");
+			System.err.println("Threads close error!");
 		}
 	}
 
@@ -144,7 +144,7 @@ public class Server {
 					System.exit(0);
 				}
 			} catch (Exception e) {
-				System.err.println("Потоки не были закрыты!");
+				System.err.println("Threads close error!");
 			}
 		}
 	}
